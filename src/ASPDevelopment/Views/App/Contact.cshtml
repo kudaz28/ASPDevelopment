@@ -9,25 +9,34 @@
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script> 
 }
 
-<h1>Contact Details</h1> 
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Contact Details</h1>
 
-<form method="post">
-    @if ( ViewBag.Message != null)
-    {
-       <div>ViewBag.Message</div>
-    }
-    <div asp-validation-summary="ModelOnly"></div>
-    <label asp-for="Name">Name</label>
-    <input asp-for="Name"/>
-    <span asp-validation-for="Name"></span>
-    <label asp-for="Email">Email</label>
-    <input type="email" asp-for="Email"/>
-    <span asp-validation-for="Email"></span>
-    <label asp-for="Name">Message</label>
-    <textarea cols="40" rows="4" asp-for="Message"></textarea>
-    <span asp-validation-for="Message"></span>
-    <div>
-        <input type="submit" value="Send"/>
+        <form method="post">
+            @if (ViewBag.Message != null)
+            {
+                <div>ViewBag.Message</div>
+            }
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="Name">Name</label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input type="email" asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Message</label>
+                <textarea cols="40" rows="4" asp-for="Message" class="form-control"></textarea>
+                <span asp-validation-for="Message"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send" class="btn btn-success"/>
+            </div>
+        </form>
     </div>
-</form>
-
+</div>
